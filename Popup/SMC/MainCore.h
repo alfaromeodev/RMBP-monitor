@@ -31,10 +31,7 @@
 
 - (void)saveSetting:(id)object forKey:(NSString*)key;
 - (NSDictionary*)editNestedDict:(NSDictionary*)dict setObject:(id)object forKeyHierarchy:(NSArray*)hierarchy;
-- (void)findFans;
-- (void)syncFans;
-- (void)setFanSpeed:(NSString*)speed ifEnabledFor:(NSString*)type;
-- (void)setFanSpeed:(NSString*)speed withName:(NSString*)name;
+
 - (void)syncTemp;
 - (void)checkLoop;
 - (NSDictionary*)getAvgAndHigh:(NSDictionary*)foundKeys;

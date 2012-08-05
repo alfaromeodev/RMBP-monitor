@@ -42,6 +42,19 @@
 #define DATATYPE_UINT8        "ui8 "
 #define DATATYPE_UINT16       "ui16"
 #define DATATYPE_UINT32       "ui32"
+#define DATATYPE_SP78         "sp78"
+
+//// key values
+//#define SMC_KEY_CPU_TEMP          "TC0D"
+//#define SMC_KEY_GPU_TEMP	      "TG0P"
+//#define SMC_KEY_GPU_DIODE_TEMP    "TG0D"
+//#define SMC_KEY_GPU_HEATSINK_TEMP "TG0H"
+//#define SMC_FANS_COUNT		      "FNum"
+//#define SMC_KEY_FAN0_RPM_MIN      "F0Mn"
+//#define SMC_KEY_FAN1_RPM_MIN      "F1Mn"
+//#define SMC_KEY_FAN0_RPM_CUR      "F0Ac"
+//#define SMC_KEY_FAN1_RPM_CUR      "F1Ac"
+
 
 typedef struct {
     char                  major;

@@ -25,21 +25,23 @@
 
 + (void)openConn;
 
-+ (NSDictionary*)getAllKeys;
-+ (NSDictionary*)getKeyValues;
++ (NSDictionary *)getAllKeys;
++ (NSDictionary *)getKeyValues;
+
 
 + (int)get_fan_rpm:(int)fan_number;
 + (int)get_fan_num;
 + (int)get_min_speed:(int)fan_number;
 + (int)get_max_speed:(int)fan_number;
-+ (void)setFanRpm:(NSString *)key value:(NSString *)value;
-+ (NSString*)get_fan_descr:(int)fan_number;
-+ (NSString*)installAndCheckHelper:(NSString*)copyFrom;
-+ (void)removeHelper;
-+ (void)setupHelper;
++ (NSString *)get_fan_descr:(int)fan_number;
++ (kern_return_t)set_fan:(char *)key rpm:(int)rpm;
 
-+ (BOOL)volHasOwnershipSuid:(NSString*)path;
-+ (NSString*)execTask:(NSString*)launch args:(NSArray*)args;
+
++ (double)get_temp:(char *)key;
+
+
++ (BOOL)volHasOwnershipSuid:(NSString *)path;
++ (NSString *)execTask:(NSString *)launch args:(NSArray *)args;
 + (NSString *)machineName;
 + (NSString *)machineModel;
 + (BOOL)isIntel;
@@ -48,6 +50,6 @@
 @end
 
 @interface NSNumber (NumberAdditions)
-- (NSString *) tohex;
-- (NSNumber*) celsius_fahrenheit;
+- (NSString *)tohex;
+- (NSNumber *)celsius_fahrenheit;
 @end

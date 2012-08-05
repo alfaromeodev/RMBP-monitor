@@ -27,8 +27,7 @@
 
 io_connect_t conn;
 
-UInt32 _strtoul(char *str, int size, int base)
-{
+UInt32 _strtoul(char *str, int size, int base) {
     UInt32 total = 0;
     int i;
 
@@ -42,8 +41,7 @@ UInt32 _strtoul(char *str, int size, int base)
     return total;
 }
 
-void _ultostr(char *str, UInt32 val)
-{
+void _ultostr(char *str, UInt32 val) {
     str[0] = '\0';
     sprintf(str, "%c%c%c%c", 
             (unsigned int) val >> 24,
@@ -52,8 +50,7 @@ void _ultostr(char *str, UInt32 val)
             (unsigned int) val);
 }
 
-float _strtof(char *str, int size, int e)
-{
+float _strtof(char *str, int size, int e) {
     float total = 0;
     int i;
 
@@ -68,27 +65,25 @@ float _strtof(char *str, int size, int e)
     return total;
 }
 
-void smc_init(){
+void smc_init() {
 	SMCOpen(&conn);
 }
 
-void smc_close(){
+void smc_close() {
 	SMCClose(conn);
 }
-void printFPE2(SMCVal_t val)
-{
+
+void printFPE2(SMCVal_t val) {
     /* FIXME: This decode is incomplete, last 2 bits are dropped */
 
     printf("%.0f ", _strtof(val.bytes, val.dataSize, 2));
 }
 
-void printUInt(SMCVal_t val)
-{
+void printUInt(SMCVal_t val) {
     printf("%u ", (unsigned int) _strtoul(val.bytes, val.dataSize, 10));
 }
 
-void printBytesHex(SMCVal_t val)
-{
+void printBytesHex(SMCVal_t val) {
     int i;
 
     printf("(bytes");
@@ -97,8 +92,7 @@ void printBytesHex(SMCVal_t val)
     printf(")\n");
 }
 
-void printVal(SMCVal_t val)
-{
+void printVal(SMCVal_t val) {
     printf("  %-4s  [%-4s]  ", val.key, val.dataType);
     if (val.dataSize > 0)
     {
@@ -117,8 +111,7 @@ void printVal(SMCVal_t val)
     }
 }
 
-kern_return_t SMCOpen(io_connect_t *conn)
-{
+kern_return_t SMCOpen(io_connect_t *conn) {
     kern_return_t result;
     mach_port_t   masterPort;
     io_iterator_t iterator;
@@ -153,14 +146,11 @@ kern_return_t SMCOpen(io_connect_t *conn)
     return kIOReturnSuccess;
 }
 
-kern_return_t SMCClose(io_connect_t conn)
-{
+kern_return_t SMCClose(io_connect_t conn) {
     return IOServiceClose(conn);
 }
 
-
-kern_return_t SMCCall(uint32_t index, SMCKeyData_t *inputStructure, SMCKeyData_t *outputStructure)
-{
+kern_return_t SMCCall(uint32_t index, SMCKeyData_t *inputStructure, SMCKeyData_t *outputStructure) {
     size_t structureInputSize = sizeof(SMCKeyData_t);
     size_t structureOutputSize = sizeof(SMCKeyData_t);
 	
@@ -184,8 +174,7 @@ kern_return_t SMCCall(uint32_t index, SMCKeyData_t *inputStructure, SMCKeyData_t
 	 */
 }
 
-kern_return_t SMCCall2(uint32_t index, SMCKeyData_t *inputStructure, SMCKeyData_t *outputStructure,io_connect_t conn)
-{
+kern_return_t SMCCall2(uint32_t index, SMCKeyData_t *inputStructure, SMCKeyData_t *outputStructure,io_connect_t conn) {
     size_t structureInputSize = sizeof(SMCKeyData_t);
     size_t structureOutputSize = sizeof(SMCKeyData_t);
 
@@ -209,8 +198,7 @@ kern_return_t SMCCall2(uint32_t index, SMCKeyData_t *inputStructure, SMCKeyData_
 	 */
 }
 
-kern_return_t SMCReadKey2(UInt32Char_t key, SMCVal_t *val,io_connect_t conn)
-{
+kern_return_t SMCReadKey2(UInt32Char_t key, SMCVal_t *val,io_connect_t conn) {
     kern_return_t result;
     SMCKeyData_t  inputStructure;
     SMCKeyData_t  outputStructure;
@@ -241,8 +229,7 @@ kern_return_t SMCReadKey2(UInt32Char_t key, SMCVal_t *val,io_connect_t conn)
     return kIOReturnSuccess;
 }
 
-kern_return_t SMCReadKey(UInt32Char_t key, SMCVal_t *val)
-{
+kern_return_t SMCReadKey(UInt32Char_t key, SMCVal_t *val) {
     kern_return_t result;
     SMCKeyData_t  inputStructure;
     SMCKeyData_t  outputStructure;
@@ -273,9 +260,7 @@ kern_return_t SMCReadKey(UInt32Char_t key, SMCVal_t *val)
     return kIOReturnSuccess;
 }
 
-
-kern_return_t SMCWriteKey(SMCVal_t writeVal)
-{
+kern_return_t SMCWriteKey(SMCVal_t writeVal) {
     kern_return_t result;
     SMCKeyData_t  inputStructure;
     SMCKeyData_t  outputStructure;
@@ -304,8 +289,7 @@ kern_return_t SMCWriteKey(SMCVal_t writeVal)
     return kIOReturnSuccess;
 }
 
-kern_return_t SMCWriteKey2(SMCVal_t writeVal,io_connect_t conn)
-{
+kern_return_t SMCWriteKey2(SMCVal_t writeVal,io_connect_t conn) {
     kern_return_t result;
     SMCKeyData_t  inputStructure;
     SMCKeyData_t  outputStructure;
@@ -333,17 +317,14 @@ kern_return_t SMCWriteKey2(SMCVal_t writeVal,io_connect_t conn)
     return kIOReturnSuccess;
 }
 
-
-UInt32 SMCReadIndexCount(void)
-{
+UInt32 SMCReadIndexCount(void) {
     SMCVal_t val;
 
     SMCReadKey("#KEY", &val);
     return _strtoul(val.bytes, val.dataSize, 10);
 }
 
-kern_return_t SMCPrintAll(void)
-{
+kern_return_t SMCPrintAll(void) {
     kern_return_t result;
     SMCKeyData_t  inputStructure;
     SMCKeyData_t  outputStructure;
@@ -375,8 +356,7 @@ kern_return_t SMCPrintAll(void)
     return kIOReturnSuccess;
 }
 
-kern_return_t SMCPrintFans(void)
-{
+kern_return_t SMCPrintFans(void) {
     kern_return_t result;
     SMCVal_t      val;
     UInt32Char_t  key;
@@ -417,8 +397,7 @@ kern_return_t SMCPrintFans(void)
     return kIOReturnSuccess;
 }
 
-void usage(char* prog)
-{
+void usage(char* prog) {
         printf("Apple System Management Control (SMC) tool %s\n", VERSION);
         printf("Usage:\n");
         printf("%s [options]\n", prog);
@@ -432,8 +411,7 @@ void usage(char* prog)
         printf("\n");
 }
 
-kern_return_t SMCWriteSimple(UInt32Char_t key,char *wvalue,io_connect_t conn)
-{
+kern_return_t SMCWriteSimple(UInt32Char_t key,char *wvalue,io_connect_t conn) {
 	    kern_return_t result;
 		SMCVal_t   val;
 		int i;
@@ -453,9 +431,7 @@ kern_return_t SMCWriteSimple(UInt32Char_t key,char *wvalue,io_connect_t conn)
 		return result;
 }
 
-
-int main_deac(int argc, char *argv[])
-{
+int main_deac(int argc, char *argv[]) {
     int c;
     extern char   *optarg;
     extern int    optind, optopt, opterr;
@@ -564,4 +540,3 @@ int main_deac(int argc, char *argv[])
     SMCClose(conn);
     return 0;;
 }
-
