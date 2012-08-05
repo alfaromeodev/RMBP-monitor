@@ -1,11 +1,10 @@
-#import "MenubarController.h"
-#import "PanelController.h"
+@interface ApplicationDelegate : NSObject <NSApplicationDelegate> {
+    NSMenu *statusMenu;
+    NSStatusItem *statusItem;
+    
+    NSMenuItem *fanSpeed, *cpuTmp, *graphTmp;
+}
 
-@interface ApplicationDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
-
-@property (nonatomic, strong) MenubarController *menubarController;
-@property (nonatomic, strong, readonly) PanelController *panelController;
-
-- (IBAction)togglePanel:(id)sender;
+- (void)updateSystemInfo;
 
 @end
