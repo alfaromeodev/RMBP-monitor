@@ -19,7 +19,7 @@
     statusMenu = [[NSMenu alloc] initWithTitle:@"test"];
     
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
-    statusItem.title = @"test";
+    statusItem.title = @"Monitor";
     statusItem.highlightMode = YES;
     statusItem.menu = statusMenu;
     
@@ -69,7 +69,7 @@
     int rightRPM = [smcWrapper get_fan_rpm:1];
     NSLog(@"left:%d right:%d", leftRPM, rightRPM);
     
-    fanSpeed.title = [NSString stringWithFormat:@"left:%d right:%d", leftRPM, rightRPM];
+    fanSpeed.title = [NSString stringWithFormat:@"风扇: %d, %d", leftRPM, rightRPM];
     
     double batteryMax = [smcWrapper get_temp:"TB0T"];//Battery TS_MAX
     double battery1 = [smcWrapper get_temp:"TB1T"];//Battery TS 1
@@ -89,11 +89,11 @@
     
     statusItem.title = [NSString stringWithFormat:@"%.0f",[smcWrapper get_temp:"TC0F"]];
     
-    cpuTmp.title = [NSString stringWithFormat:@"cpu: %.2f, %.2f, %.2f",
+    cpuTmp.title = [NSString stringWithFormat:@"CPU: %.0f, %.0f, %.0f",
                     [smcWrapper get_temp:"TC0P"],
                     [smcWrapper get_temp:"TC0E"],
                     [smcWrapper get_temp:"TC0F"] ];
-    graphTmp.title = [NSString stringWithFormat:@"graphic: %.2f, %.2f, %.2f",
+    graphTmp.title = [NSString stringWithFormat:@"显卡: %.0f, %.0f, %.0f",
                       [smcWrapper get_temp:"TG0P"], //GPU 0 Proximity temp
                       [smcWrapper get_temp:"TG0D"], //GPU 0 die temp
                       [smcWrapper get_temp:"TG1D"] ];
