@@ -7,8 +7,7 @@
 
 #pragma mark -
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self != nil)
     {
@@ -22,28 +21,28 @@
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
+
+    [super dealloc];
 }
+
+
 
 #pragma mark -
 #pragma mark Public accessors
-
-- (NSStatusItem *)statusItem
-{
+- (NSStatusItem *)statusItem {
     return self.statusItemView.statusItem;
 }
 
-#pragma mark -
 
-- (BOOL)hasActiveIcon
-{
+
+#pragma mark -
+- (BOOL)hasActiveIcon {
     return self.statusItemView.isHighlighted;
 }
 
-- (void)setHasActiveIcon:(BOOL)flag
-{
+- (void)setHasActiveIcon:(BOOL)flag {
     self.statusItemView.isHighlighted = flag;
 }
 

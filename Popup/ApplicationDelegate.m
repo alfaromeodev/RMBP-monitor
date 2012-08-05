@@ -1,5 +1,6 @@
 #import "ApplicationDelegate.h"
 
+
 @implementation ApplicationDelegate
 
 @synthesize panelController = _panelController;
@@ -10,6 +11,8 @@
 #pragma mark -
 - (void)dealloc {
     [_panelController removeObserver:self forKeyPath:@"hasActivePanel"];
+
+    [super dealloc];
 }
 
 

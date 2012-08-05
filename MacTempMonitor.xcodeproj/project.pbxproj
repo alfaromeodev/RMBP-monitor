@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20E81D415CE4C8600FF46F6 /* MainCore.m in Sources */ = {isa = PBXBuildFile; fileRef = C20E81CE15CE4C8600FF46F6 /* MainCore.m */; };
+		C20E81D515CE4C8600FF46F6 /* smc.c in Sources */ = {isa = PBXBuildFile; fileRef = C20E81CF15CE4C8600FF46F6 /* smc.c */; };
+		C20E81D615CE4C8600FF46F6 /* smcWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C20E81D215CE4C8600FF46F6 /* smcWrapper.m */; };
+		C20E81D915CE4CE400FF46F6 /* VADiskPooler.m in Sources */ = {isa = PBXBuildFile; fileRef = C20E81D715CE4CE400FF46F6 /* VADiskPooler.m */; };
+		C20E81DB15CE4D3B00FF46F6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C20E81DA15CE4D3B00FF46F6 /* Security.framework */; };
+		C2933DDA15CE2B7300992591 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2933DD915CE2B7300992591 /* IOKit.framework */; };
 		DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4F7C0813C30F9F00825C6E /* Cocoa.framework */; };
 		DD4F7C1513C30F9F00825C6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1413C30F9F00825C6E /* main.m */; };
 		DD4F7C1C13C30F9F00825C6E /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */; };
@@ -22,14 +28,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD4F7C0413C30F9F00825C6E /* Popup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C20E81CD15CE4C8600FF46F6 /* MainCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCore.h; sourceTree = "<group>"; };
+		C20E81CE15CE4C8600FF46F6 /* MainCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCore.m; sourceTree = "<group>"; };
+		C20E81CF15CE4C8600FF46F6 /* smc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = smc.c; sourceTree = "<group>"; };
+		C20E81D015CE4C8600FF46F6 /* smc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smc.h; sourceTree = "<group>"; };
+		C20E81D115CE4C8600FF46F6 /* smcWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smcWrapper.h; sourceTree = "<group>"; };
+		C20E81D215CE4C8600FF46F6 /* smcWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smcWrapper.m; sourceTree = "<group>"; };
+		C20E81D715CE4CE400FF46F6 /* VADiskPooler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VADiskPooler.m; sourceTree = "<group>"; };
+		C20E81D815CE4CE400FF46F6 /* VADiskPooler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VADiskPooler.h; sourceTree = "<group>"; };
+		C20E81DA15CE4D3B00FF46F6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C2933DD915CE2B7300992591 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		DD4F7C0413C30F9F00825C6E /* MacTempMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacTempMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD4F7C0813C30F9F00825C6E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		DD4F7C0B13C30F9F00825C6E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		DD4F7C0C13C30F9F00825C6E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		DD4F7C0D13C30F9F00825C6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DD4F7C1013C30F9F00825C6E /* Popup-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Popup-Info.plist"; path = "Popup/Popup-Info.plist"; sourceTree = "<group>"; };
+		DD4F7C1013C30F9F00825C6E /* MacTempMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MacTempMonitor-Info.plist"; path = "Popup/MacTempMonitor-Info.plist"; sourceTree = "<group>"; };
 		DD4F7C1413C30F9F00825C6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DD4F7C1613C30F9F00825C6E /* Popup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Popup-Prefix.pch"; sourceTree = "<group>"; };
+		DD4F7C1613C30F9F00825C6E /* MacTempMonitor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacTempMonitor-Prefix.pch"; sourceTree = "<group>"; };
 		DD4F7C1A13C30F9F00825C6E /* ApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
 		DD4F7C1B13C30F9F00825C6E /* ApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
 		DD4F7C1E13C30F9F00825C6E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -53,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20E81DB15CE4D3B00FF46F6 /* Security.framework in Frameworks */,
+				C2933DDA15CE2B7300992591 /* IOKit.framework in Frameworks */,
 				DD4F7C0913C30F9F00825C6E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +78,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C20E81CA15CE4C8600FF46F6 /* SMC */ = {
+			isa = PBXGroup;
+			children = (
+				C20E81CD15CE4C8600FF46F6 /* MainCore.h */,
+				C20E81CE15CE4C8600FF46F6 /* MainCore.m */,
+				C20E81D015CE4C8600FF46F6 /* smc.h */,
+				C20E81CF15CE4C8600FF46F6 /* smc.c */,
+				C20E81D115CE4C8600FF46F6 /* smcWrapper.h */,
+				C20E81D215CE4C8600FF46F6 /* smcWrapper.m */,
+				C20E81D815CE4CE400FF46F6 /* VADiskPooler.h */,
+				C20E81D715CE4CE400FF46F6 /* VADiskPooler.m */,
+			);
+			path = SMC;
+			sourceTree = "<group>";
+		};
 		DD4F7BF913C30F9F00825C6E = {
 			isa = PBXGroup;
 			children = (
@@ -67,14 +100,14 @@
 				DD4F7C2813C3123E00825C6E /* User Interface */,
 				DD4F7C0713C30F9F00825C6E /* Frameworks */,
 				DD4F7C0513C30F9F00825C6E /* Products */,
-				DD4F7C1013C30F9F00825C6E /* Popup-Info.plist */,
+				DD4F7C1013C30F9F00825C6E /* MacTempMonitor-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		DD4F7C0513C30F9F00825C6E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD4F7C0413C30F9F00825C6E /* Popup.app */,
+				DD4F7C0413C30F9F00825C6E /* MacTempMonitor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +115,8 @@
 		DD4F7C0713C30F9F00825C6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C20E81DA15CE4D3B00FF46F6 /* Security.framework */,
+				C2933DD915CE2B7300992591 /* IOKit.framework */,
 				DD4F7C0B13C30F9F00825C6E /* AppKit.framework */,
 				DD4F7C0C13C30F9F00825C6E /* CoreData.framework */,
 				DD4F7C0D13C30F9F00825C6E /* Foundation.framework */,
@@ -93,6 +128,7 @@
 		DD4F7C0E13C30F9F00825C6E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C20E81CA15CE4C8600FF46F6 /* SMC */,
 				DD4F7C2613C311DF00825C6E /* Controllers */,
 				DD4F7C3913C317EC00825C6E /* Views */,
 				DD4F7C0F13C30F9F00825C6E /* Supporting Files */,
@@ -104,7 +140,7 @@
 		DD4F7C0F13C30F9F00825C6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DD4F7C1613C30F9F00825C6E /* Popup-Prefix.pch */,
+				DD4F7C1613C30F9F00825C6E /* MacTempMonitor-Prefix.pch */,
 				DD4F7C1413C30F9F00825C6E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -166,9 +202,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD4F7C0313C30F9F00825C6E /* Popup */ = {
+		DD4F7C0313C30F9F00825C6E /* MacTempMonitor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD4F7C2213C30F9F00825C6E /* Build configuration list for PBXNativeTarget "Popup" */;
+			buildConfigurationList = DD4F7C2213C30F9F00825C6E /* Build configuration list for PBXNativeTarget "MacTempMonitor" */;
 			buildPhases = (
 				DD4F7C0013C30F9F00825C6E /* Sources */,
 				DD4F7C0113C30F9F00825C6E /* Frameworks */,
@@ -178,9 +214,9 @@
 			);
 			dependencies = (
 			);
-			name = Popup;
+			name = MacTempMonitor;
 			productName = Popup;
-			productReference = DD4F7C0413C30F9F00825C6E /* Popup.app */;
+			productReference = DD4F7C0413C30F9F00825C6E /* MacTempMonitor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -188,7 +224,7 @@
 /* Begin PBXProject section */
 		DD4F7BFB13C30F9F00825C6E /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "Popup" */;
+			buildConfigurationList = DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "MacTempMonitor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -200,7 +236,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD4F7C0313C30F9F00825C6E /* Popup */,
+				DD4F7C0313C30F9F00825C6E /* MacTempMonitor */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +267,10 @@
 				DD4F7C3F13C318D600825C6E /* PanelController.m in Sources */,
 				DD4F7C4413C31BD200825C6E /* Panel.m in Sources */,
 				DD4F7C4713C3208500825C6E /* BackgroundView.m in Sources */,
+				C20E81D415CE4C8600FF46F6 /* MainCore.m in Sources */,
+				C20E81D515CE4C8600FF46F6 /* smc.c in Sources */,
+				C20E81D615CE4C8600FF46F6 /* smcWrapper.m in Sources */,
+				C20E81D915CE4CE400FF46F6 /* VADiskPooler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +311,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -290,18 +330,18 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
 		DD4F7C2313C30F9F00825C6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Popup/Popup-Prefix.pch";
-				INFOPLIST_FILE = "Popup/Popup-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Popup/MacTempMonitor-Prefix.pch";
+				INFOPLIST_FILE = "Popup/MacTempMonitor-Info.plist";
+				PRODUCT_NAME = MacTempMonitor;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -309,11 +349,11 @@
 		DD4F7C2413C30F9F00825C6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Popup/Popup-Prefix.pch";
-				INFOPLIST_FILE = "Popup/Popup-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Popup/MacTempMonitor-Prefix.pch";
+				INFOPLIST_FILE = "Popup/MacTempMonitor-Info.plist";
+				PRODUCT_NAME = MacTempMonitor;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -321,7 +361,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "Popup" */ = {
+		DD4F7BFE13C30F9F00825C6E /* Build configuration list for PBXProject "MacTempMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD4F7C2013C30F9F00825C6E /* Debug */,
@@ -330,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD4F7C2213C30F9F00825C6E /* Build configuration list for PBXNativeTarget "Popup" */ = {
+		DD4F7C2213C30F9F00825C6E /* Build configuration list for PBXNativeTarget "MacTempMonitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD4F7C2313C30F9F00825C6E /* Debug */,
