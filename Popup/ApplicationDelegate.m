@@ -34,6 +34,10 @@
     graphTmp = [[NSMenuItem alloc] initWithTitle:@"显卡" action:@selector(nothing) keyEquivalent:@""];
     [statusMenu addItem:graphTmp];
     [graphTmp release];
+    
+    NSMenuItem *exitApp = [[NSMenuItem alloc] initWithTitle:@"关闭" action:@selector(exitApp) keyEquivalent:@""];
+    [statusMenu addItem:exitApp];
+    [exitApp release];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -116,6 +120,13 @@
     
 }
 
+- (void)exitApp {
+    exit(0);
+}
+
+//- (void)nothing {
+//    
+//}
 
 
 @end
