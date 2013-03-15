@@ -1,6 +1,6 @@
-# Popup
+# RMBP Monitor
 
-Popup project is a demo with custom popover window appearing from the icon in the Mac OS X status bar.
+RMBP Monitor is a simple tool to monitor 2012 RMBP's temperature and fan speed.
 
 # License
 
